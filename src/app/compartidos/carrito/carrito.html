@@ -1,1 +1,28 @@
-<p>carrito works!</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Marca</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Borrar</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (p of carrito; track p.id) {
+      <tr>
+        <th scope="row"><img src="{{p.img}}" alt="" width="200px"></th>
+        <td>{{p.marca}}</td>
+        <td><button (click)="disminuirCantidad(p.id)" class="botoncillos">➖</button>{{p.cantidad}}<button (click)="aumentarCantidad(p.id)" class="botoncillos">➕</button></td>
+        <td>${{p.precio * p.cantidad}}</td>
+        <td>
+          <button class="boton" (click)="borrarProducto(p.id)">🗑️</button>
+        </td>
+      </tr>
+    }
+  </tbody>  
+</table>
+<div class="botoncitos">
+<button class="boton" (click)="vaciarCarrito()">Borrar carrito 🗑️</button>
+<button class="boton">Comprar carrito 🛒</button>
+</div>  

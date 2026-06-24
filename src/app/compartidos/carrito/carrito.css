@@ -1,0 +1,167 @@
+.table {
+  width: 100%;
+  background: linear-gradient(135deg, rgba(248, 154, 212, 0.616) 0%, rgba(255, 182, 220, 0.8) 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 
+    0 20px 40px rgba(248, 154, 212, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.table thead th {
+    background:rgba(248, 154, 212, 0.616);
+  color: rgb(253, 253, 253); /* Letras blancas garantizadas */
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 20px 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border: none;
+}
+
+.table tbody tr {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.table tbody tr:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 10px 25px rgba(248, 154, 212, 0.2);
+}
+
+.table tbody th,
+.table tbody td {
+  padding: 18px 24px;
+  color: #333;
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
+}
+
+.table tbody th {
+  font-weight: 700;
+  color: #555;
+  background: rgba(255, 255, 255, 0.1); /* Mismo tono sutil para la columna ID */
+}
+
+.table tbody td {
+  position: relative;
+}
+
+.table tbody td::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  background: rgba(248, 154, 212, 0.8);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.table tbody tr:hover td::before {
+  opacity: 1;
+  left: 12px;
+}
+
+/* =========================================
+   ESTILOS PARA IMÁGENES Y BOTONES
+   ========================================= */
+
+/* --- 1. Estilo para las Imágenes --- */
+.table tbody th img {
+  /* forzamos un tamaño más pequeño para que均性强 en la tabla */
+  width: 70px !important; 
+  height: 70px;
+  /* 'object-fit' evita que la imagen se vea estirada o deformada */
+  object-fit: cover; 
+  /* Redondeamos las esquinas */
+  border-radius: 12px; 
+  /* Un marco blanco para que resalte sobre el fondo rosa */
+  border: 2px solid rgba(255, 255, 255, 0.7); 
+  /* Sombra suave para dar profundidad */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
+  /* Transición suave para el efecto hover */
+  transition: transform 0.3s ease;
+}
+
+/* Efecto hover en la imagen */
+.table tbody th img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* --- 2. Botones Pequeños (Cantidad: + y -) --- */
+.botoncillos { /* Nota: Asegúrate que el HTML tenga esta clase o usa .botoncillos si está mal escrito */
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(248, 154, 212, 0.8);
+  color: #d63384; /* Color rosa oscuro para el icono */
+  border-radius: 50%; /* Botón perfectly circular */
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Hover para botones de cantidad */
+.botoncillos:hover {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(248, 154, 212, 0.6);
+  transform: scale(1.1);
+  border-color: #fff;
+}
+
+/* --- 3. Botones de Acción (Borrar, Comprar, Vaciar) --- */
+.boton {
+  /* Gradiente coincide con tu tabla */
+  background: linear-gradient(135deg, rgba(255, 182, 220, 0.9) 0%, rgba(248, 154, 212, 0.9) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff; /* Texto blanco */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Sombra en texto para legibilidad */
+  padding: 10px 18px;
+  border-radius: 10px; /* Bordes redondeados tipo "píldora" */
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(248, 154, 212, 0.3);
+}
+
+/* Hover para botones grandes */
+.boton:hover {
+  transform: translateY(-3px); /* Flota un poco hacia arriba */
+  box-shadow: 0 8px 20px rgba(248, 154, 212, 0.5); /* Sombra más grande */
+  filter: brightness(1.1); /* Se ve un poco más brillante */
+  background: linear-gradient(135deg, #ffcde6 0%, #f89ad4 100%);
+}
+
+/* Click activo */
+.boton:active {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(248, 154, 212, 0.3);
+}
+
+/* Contenedor de los botones grandes (Opcional) */
+.botoncitos {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Espacio entre los botones de abajo */
+  margin-top: 20px;
+}

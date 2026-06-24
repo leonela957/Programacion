@@ -1,1 +1,29 @@
-<p>favoritos works!</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Marca</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Borrar</th>
+      <th scope="col">Agregar</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (p of favorito; track p.id) {
+      <tr>
+        <th scope="row"><img src="{{p.img}}" alt="" width="200px"></th>
+        <td>{{p.marca}}</td>
+        <td>${{p.precio}}</td>
+        <td>
+         <button class="boton" (click)="borrarProducto(p.id)">🗑️</button> 
+        </td>
+        <td>
+         <button class="boton" (click)="agregarCarrito(p)">Agregar al carro 🛒</button> 
+        </td>
+      </tr>
+    }
+  </tbody>  
+</table>
+<div class="botoncitos">
+ <button class="boton" (click)="vaciarFavorito()">Vaciar favoritos 🗑️</button> 
+</div>  

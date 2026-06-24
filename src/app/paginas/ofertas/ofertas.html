@@ -1,1 +1,24 @@
-<p>ofertas works!</p>
+<main class="cartotas">
+  @for(p of Ofertas; track p.id){
+    @if (p.disponibilidad){
+      <div class="card" style="width: 18rem;">
+        <!-- ★★★ AGRÉGALO AQUÍ ★★★ -->
+        <div class="cinta-oferta">Oferta</div>
+        
+        <img src="{{p.img}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{p.marca}}</h5>
+          <p class="card-text">T. {{p.talle}}</p>
+          <p>C. {{p.color}}</p>
+          <p>${{p.precio}}</p>
+          
+          <div class="card-buttons">
+            <button (click)="agregarACarrito(p)">Agregar al carro 🛒</button>
+            <button (click)="agregarAFavorito(p)">❤️</button>
+          </div> 
+          
+        </div>
+      </div>
+    }
+  }
+</main>

@@ -1,1 +1,26 @@
-<p>contacto works!</p>
+<div class="contact-container"> <!-- Contenedor extra para centrar -->
+
+  <h1>CONTÁCTANOS</h1>
+
+  <form>
+    
+    <div class="form-group">
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" placeholder="Ej: Juan Perez">
+    </div>
+
+    <div class="form-group">
+      <label for="mail">Email</label>
+      <input type="email" id="mail" placeholder="Ej: juan@correo.com">  
+    </div>
+
+    <div class="form-group">
+      <label for="mensaje">Mensaje</label>
+      <!-- Mejor uso de textarea para mensajes largos -->
+       <!-- Rows para darle una altura inicial al espacio de texto-->
+      <textarea id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>        
+    </div>
+
+    <button class="boton" type="button">Enviar mensaje</button>
+  </form>
+</div>
